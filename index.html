@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anamnesi Preparatore Atletico - Max Perotti</title>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --dark-bg: #1a1a1a;
+            --text-light: #f1faee;
+            --input-bg: #2d2d2d;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #242424;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h1 { text-align: center; color: var(--primary-color); text-transform: uppercase; margin-bottom: 5px; }
+        h2 { text-align: center; font-size: 1.2rem; margin-top: 0; opacity: 0.8; }
+        
+        .info-box {
+            background: rgba(230, 57, 70, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 10px;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+        }
+
+        .section-title {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        .form-group { margin-bottom: 20px; }
+        
+        label { display: block; margin-bottom: 8px; font-weight: bold; font-size: 0.9rem; }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background: var(--input-bg);
+            color: white;
+            box-sizing: border-box;
+        }
+
+        textarea { resize: vertical; min-height: 80px; }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #25D366; /* WhatsApp Green */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        button:hover { background-color: #128C7E; transform: translateY(-2px); }
+
+        .warning {
+            color: #ffb703;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>MAX PEROTTI</h1>
+    <h2>Anamnesi Preparatore Atletico</h2>
+    
+    <div class="info-box">
+        Tempo stimato: 4 minuti | Necessario per il protocollo Life Center personalizzato. [cite: 3, 16]
+    </div>
+
+    <form id="anamnesiForm">
+        <div class="section-title">Dati Personali</div>
+        
+        <div class="form-group">
+            <label>1. Nome e Cognome [cite: 4]</label>
+            <input type="text" id="nome" required placeholder="Inserisci il tuo nome">
+        </div>
+
+        <div class="form-group">
+            <label>2. Data di Nascita [cite: 5]</label>
+            <input type="date" id="nascita" required>
+        </div>
+
+        <div class="form-row" style="display: flex; gap: 10px;">
+            <div class="form-group" style="flex: 1;">
+                <label>3. Altezza (cm) [cite: 6]</label>
+                <input type="number" id="altezza" required>
+            </div>
+            <div class="form-group" style="flex: 1;">
+                <label>4. Peso (kg) [cite: 7]</label>
+                <input type="number" id="peso" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>5. Lavoro Svolto [cite: 8]</label>
+            <input type="text" id="lavoro" required>
+        </div>
+
+        <div class="form-group">
+            <label>6. Giorni di allenamento a settimana? [cite: 9]</label>
+            <select id="giorni_allenamento">
+                <option value="1-2">1-2 giorni</option>
+                <option value="3-4">3-4 giorni</option>
+                <option value="5+">5 o più giorni</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>7. Problemi Articolari / Schiena / Tendini [cite: 10]</label>
+            <textarea id="problemi" placeholder="Descrivi eventuali dolori o infortuni"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>8. Patologie o Allergie [cite: 11]</label>
+            <textarea id="patologie"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>9. Assumi Farmaci? [cite: 12]</label>
+            <input type="text" id="farmaci">
+        </div>
+
+        <div class="section-title">Esperienza e Alimentazione [cite: 15]</div>
+
+        <div class="form-group">
+            <label>17. Hai fatto palestra recentemente? [cite: 17]</label>
+            <input type="text" id="palestra_recente">
+        </div>
+
+        <div class="form-group">
+            <label>18. Livello [cite: 18]</label>
+            <select id="livello">
+                <option value="Principiante">Principiante</option>
+                <option value="Intermedio">Intermedio</option>
+                <option value="Avanzato">Avanzato</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>19. Obiettivo Principale [cite: 19]</label>
+            <input type="text" id="obiettivo" placeholder="Es. Dimagrimento, Massa, Forza">
+        </div>
+
+        <div class="form-group">
+            <label>21-25. Alimentazione (Scrivi cosa mangi) [cite: 21, 26]</label>
+            <textarea id="alimentazione" placeholder="Colazione, Spuntini, Pranzo, Cena..."></textarea>
+        </div>
+
+        <button type="button" onclick="sendToWhatsApp()">INVIA ANAMNESI SU WHATSAPP [cite: 27]</button>
+        
+        <p class="warning">
+            Attenzione: Compila ogni campo con precisione per ricevere il protocollo. [cite: 13, 14]
+        </p>
+    </form>
+</div>
+
+<script>
+    function sendToWhatsApp() {
+        const phone = "393927274446"; // SOSTITUISCI CON IL TUO NUMERO (es. 393471234567)
+        
+        // Raccolta dati
+        const nome = document.getElementById('nome').value;
+        const nascita = document.getElementById('nascita').value;
+        const altezza = document.getElementById('altezza').value;
+        const peso = document.getElementById('peso').value;
+        const lavoro = document.getElementById('lavoro').value;
+        const giorni = document.getElementById('giorni_allenamento').value;
+        const problemi = document.getElementById('problemi').value || "Nessuno";
+        const patologie = document.getElementById('patologie').value || "Nessuna";
+        const farmaci = document.getElementById('farmaci').value || "Nessuno";
+        const obiettivo = document.getElementById('obiettivo').value;
+        const alimentazione = document.getElementById('alimentazione').value;
+
+        if(!nome || !altezza || !peso) {
+            alert("Per favore, compila i campi obbligatori prima di inviare.");
+            return;
+        }
+
+        // Costruzione messaggio
+        const message = `*ANAMNESI MAX PEROTTI*%0A` +
+            `--------------------------%0A` +
+            `*Nome:* ${nome}%0A` +
+            `*Nascita:* ${nascita}%0A` +
+            `*Altezza:* ${altezza} cm%0A` +
+            `*Peso:* ${peso} kg%0A` +
+            `*Lavoro:* ${lavoro}%0A` +
+            `*Allenamento:* ${giorni} volte/sett%0A` +
+            `*Problemi:* ${problemi}%0A` +
+            `*Patologie:* ${patologie}%0A` +
+            `*Farmaci:* ${farmaci}%0A` +
+            `*Obiettivo:* ${obiettivo}%0A` +
+            `*Alimentazione:* ${alimentazione}`;
+
+        // Apertura WhatsApp
+        window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${message}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
