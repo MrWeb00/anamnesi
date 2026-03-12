@@ -30,6 +30,17 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
+        /* Stile per l'immagine del profilo */
+        .profile-pic {
+            display: block;
+            margin: 0 auto 20px auto;
+            width: 180px; /* Regola la dimensione a tuo piacimento */
+            height: auto;
+            border-radius: 12px;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+        }
+
         h1 { text-align: center; color: var(--primary-color); text-transform: uppercase; margin-bottom: 5px; }
         h2 { text-align: center; font-size: 1.2rem; margin-top: 0; opacity: 0.8; }
         
@@ -92,44 +103,46 @@
 <body>
 
 <div class="container">
-    <h1>MAX PEROTTI</h1>
-    <h2>Anamnesi Preparatore Atletico</h2>
+    <img src="foto-profilo.jpg" alt="Max Perotti" class="profile-pic">
+
+    <h1>MAX PEROTTI [cite: 2]</h1>
+    <h2>Anamnesi Preparatore Atletico [cite: 1]</h2>
     
     <div class="info-box">
-        Tempo stimato: 4 minuti | Necessario per il protocollo Life Center personalizzato. [cite: 3, 16]
+        Tempo stimato: 2 minuti | Necessario per ricevere il protocollo personalizzato [cite: 3, 16]
     </div>
 
     <form id="anamnesiForm">
         <div class="section-title">Dati Personali</div>
         
         <div class="form-group">
-            <label>1. Nome e Cognome [cite: 4]</label>
+            <label>1. NOME E COGNOME [cite: 4]</label>
             <input type="text" id="nome" required placeholder="Inserisci il tuo nome">
         </div>
 
         <div class="form-group">
-            <label>2. Data di Nascita [cite: 5]</label>
+            <label>2. DATA DI NASCITA [cite: 5]</label>
             <input type="date" id="nascita" required>
         </div>
 
         <div class="form-row" style="display: flex; gap: 10px;">
             <div class="form-group" style="flex: 1;">
-                <label>3. Altezza (cm) [cite: 6]</label>
+                <label>3. ALTEZZA [cite: 6]</label>
                 <input type="number" id="altezza" required>
             </div>
             <div class="form-group" style="flex: 1;">
-                <label>4. Peso (kg) [cite: 7]</label>
+                <label>4. PESO [cite: 7]</label>
                 <input type="number" id="peso" required>
             </div>
         </div>
 
         <div class="form-group">
-            <label>5. Lavoro Svolto [cite: 8]</label>
+            <label>5. LAVORO SVOLTO [cite: 8]</label>
             <input type="text" id="lavoro" required>
         </div>
 
         <div class="form-group">
-            <label>6. Giorni di allenamento a settimana? [cite: 9]</label>
+            <label>6. QUANTI GIORNI TI ALLENI ALLA SETTIMANA? [cite: 9]</label>
             <select id="giorni_allenamento">
                 <option value="1-2">1-2 giorni</option>
                 <option value="3-4">3-4 giorni</option>
@@ -138,29 +151,29 @@
         </div>
 
         <div class="form-group">
-            <label>7. Problemi Articolari / Schiena / Tendini [cite: 10]</label>
+            <label>7. PROBLEMI ARTICOLARI / SCHIENA / TENDINI [cite: 10]</label>
             <textarea id="problemi" placeholder="Descrivi eventuali dolori o infortuni"></textarea>
         </div>
 
         <div class="form-group">
-            <label>8. Patologie o Allergie [cite: 11]</label>
+            <label>8. PATOLOGIE O ALLERGIE [cite: 11]</label>
             <textarea id="patologie"></textarea>
         </div>
 
         <div class="form-group">
-            <label>9. Assumi Farmaci? [cite: 12]</label>
+            <label>9. ASSUMI FARMACI [cite: 12]</label>
             <input type="text" id="farmaci">
         </div>
 
-        <div class="section-title">Esperienza e Alimentazione [cite: 15]</div>
+        <div class="section-title">ESPERIENZA / ORGANIZZAZIONE / ALIMENTAZIONE [cite: 15]</div>
 
         <div class="form-group">
-            <label>17. Hai fatto palestra recentemente? [cite: 17]</label>
+            <label>17. HAI FATTO PALESTRA RECENTEMENTE [cite: 17]</label>
             <input type="text" id="palestra_recente">
         </div>
 
         <div class="form-group">
-            <label>18. Livello [cite: 18]</label>
+            <label>18. LIVELLO [cite: 18]</label>
             <select id="livello">
                 <option value="Principiante">Principiante</option>
                 <option value="Intermedio">Intermedio</option>
@@ -169,28 +182,32 @@
         </div>
 
         <div class="form-group">
-            <label>19. Obiettivo Principale [cite: 19]</label>
+            <label>19. OBIETTIVO PRINCIPALE [cite: 19]</label>
             <input type="text" id="obiettivo" placeholder="Es. Dimagrimento, Massa, Forza">
         </div>
 
         <div class="form-group">
-            <label>21-25. Alimentazione (Scrivi cosa mangi) [cite: 21, 26]</label>
-            <textarea id="alimentazione" placeholder="Colazione, Spuntini, Pranzo, Cena..."></textarea>
+            <label>20. QUANTE ORE LAVORI AL GIORNO? [cite: 20]</label>
+            <input type="number" id="ore_lavoro">
         </div>
 
-        <button type="button" onclick="sendToWhatsApp()">INVIA ANAMNESI SU WHATSAPP [cite: 27]</button>
+        <div class="form-group">
+            <label>21-25. ALIMENTAZIONE (Scrivi esattamente come mangi) [cite: 21, 26]</label>
+            <textarea id="alimentazione" placeholder="Colazione, Spuntino mattutino, Pranzo, Spuntino serale, Cena..."></textarea>
+        </div>
+
+        <button type="button" onclick="sendToWhatsApp()">APRI WHATSAPP E INVIA ANAMNESI [cite: 27]</button>
         
         <p class="warning">
-            Attenzione: Compila ogni campo con precisione per ricevere il protocollo. [cite: 13, 14]
+            [cite: 13] ATTENZIONE: SE NON RISPONDI CORRETTAMENTE A TUTTE LE DOMANDE NON POSSO INVIARTI UN ALLENAMENTO PERSONALIZZATO [cite: 14]
         </p>
     </form>
 </div>
 
 <script>
     function sendToWhatsApp() {
-        const phone = "393927274446"; // SOSTITUISCI CON IL TUO NUMERO (es. 393471234567)
+        const phone = "393927274446"; 
         
-        // Raccolta dati
         const nome = document.getElementById('nome').value;
         const nascita = document.getElementById('nascita').value;
         const altezza = document.getElementById('altezza').value;
@@ -202,13 +219,13 @@
         const farmaci = document.getElementById('farmaci').value || "Nessuno";
         const obiettivo = document.getElementById('obiettivo').value;
         const alimentazione = document.getElementById('alimentazione').value;
+        const ore_lavoro = document.getElementById('ore_lavoro').value;
 
         if(!nome || !altezza || !peso) {
-            alert("Per favore, compila i campi obbligatori prima di inviare.");
+            alert("Per favore, compila i campi obbligatori (Nome, Altezza, Peso) prima di inviare.");
             return;
         }
 
-        // Costruzione messaggio
         const message = `*ANAMNESI MAX PEROTTI*%0A` +
             `--------------------------%0A` +
             `*Nome:* ${nome}%0A` +
@@ -216,6 +233,7 @@
             `*Altezza:* ${altezza} cm%0A` +
             `*Peso:* ${peso} kg%0A` +
             `*Lavoro:* ${lavoro}%0A` +
+            `*Ore lavoro:* ${ore_lavoro}%0A` +
             `*Allenamento:* ${giorni} volte/sett%0A` +
             `*Problemi:* ${problemi}%0A` +
             `*Patologie:* ${patologie}%0A` +
@@ -223,7 +241,6 @@
             `*Obiettivo:* ${obiettivo}%0A` +
             `*Alimentazione:* ${alimentazione}`;
 
-        // Apertura WhatsApp
         window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${message}`, '_blank');
     }
 </script>
